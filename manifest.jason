@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Prisma Lunar: Calculadora Mágica",
+  "version": "1.0",
+  "description": "A Calculadora Mágica da Sailor Moon diretamente no teu navegador!",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "luna.png"
+  },
+  "permissions": []
+}
