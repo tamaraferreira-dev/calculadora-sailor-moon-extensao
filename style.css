@@ -1,0 +1,68 @@
+/* Importando as fontes do Google (teste 1) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+    /* Gradiente escuro + Imagem de fundo da Sailor Moon */
+    background-image: linear-gradient(rgba(29, 13, 56, 0.7), rgba(119, 76, 143, 0.5)),
+                      url('SailorMoonBackground.jpg'); /* Substitua pelo caminho correto da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+}
+
+/* Fonte estilizada para os títulos mágicos */
+.font-magica { 
+    font-family: 'Cinzel', serif; 
+}
+
+/* Efeito de Vidro para os painéis (testanto em desenvolvimento) */
+.vidro-magico {
+    background: rgba(255, 235, 240, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 3px solid #ffe494;
+    box-shadow: 0 10px 40px rgba(119, 76, 143, 0.3), 0 0 20px rgba(255, 228, 148, 0.3) inset;
+}
+
+.digital-display {
+    background: rgba(18, 5, 36, 0.9);
+    border: 2px solid #ffcbd5;
+    box-shadow: inset 0 0 15px rgba(255, 77, 109, 0.5);
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ffd166;
+}
+
+.btn-controle { 
+    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.btn-controle:hover { 
+    transform: translateY(-3px) scale(1.05); 
+}
+.btn-controle:active { 
+    transform: translateY(1px) scale(0.98); 
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.flutuar {
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* Sistema de faíscas/partículas mágicas */
+.faisca {
+    position: absolute;
+    pointer-events: none;
+    font-size: 14px;
+    animation: voar 0.8s ease-out forwards;
+    z-index: 9999;
+}
+
+@keyframes voar {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0.3) rotate(360deg); opacity: 0; }
+}
