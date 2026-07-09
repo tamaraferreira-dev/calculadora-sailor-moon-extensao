@@ -17,11 +17,20 @@ min-height: 100vh;
 font-family: 'Cinzel', serif;
 }
 
+.texto-titulo {
+    color: #4c1c24 !important;
+}
+
+.texto-subtitulo {
+    color: #8a4f58 !important;
+}
+
 /* Efeito de Vidro(testanto em desenvolvimento) */
 .vidro-magico {
 background: rgba(255, 229, 236, 0.75) !important;
 backdrop-filter: blur(12px);
 -webkit-backdrop-filter: blur(12px);
+border-radius: 32px !important;
 border: 3px solid #ffe494 !important;
 box-shadow: 0 8px 32px rgba(255, 77, 109, 0.25),
 0 0 15px rgba(255, 228, 148, 0.4) inset,
@@ -33,6 +42,12 @@ background: rgba(18, 1, 54, 0.9) !important;
 border: 2px solid #ffccd5 !important;
 box-shadow: inset 0 0 15px rgba(255, 77, 109, 0.6) !important;
 text-shadow: 0 0 8px #ff4d6d, 0 0 15px #ffd166;
+}
+
+/* Cor das frases mágicas */
+#historico {
+color: #ffd166 !important;
+text-shadow: 0 0 8px rgba(255, 209, 102, 0.8) !important;
 }
 
 /* === 🌸 BOTÕES MÁGICOS GERAIS === */
@@ -76,6 +91,16 @@ border-color: #ffe494 !important;
 }
 
 .btn-igual:hover {
+background: linear-gradient(135deg, #ff758f, #ff4d6d) !important;
+box-shadow: 0 0 20px rgba(255, 77, 109, 0.8) !important;
+}
+
+/*✨ BOTÃO DE MAGIA INDIVIDUAL (Dando destaque à Estrela)*/
+#btn-magia {
+background: linear-gradient(135deg, #ff4d6d, #c9184a) !important;
+}
+
+#btn-magia:hover {
 background: linear-gradient(135deg, #ff758f, #ff4d6d) !important;
 box-shadow: 0 0 20px rgba(255, 77, 109, 0.8) !important;
 }
