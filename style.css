@@ -1,68 +1,111 @@
 /* Importando as fontes do Google (teste 1) */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght=400;600;700&display=swap');
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    
-    /* Gradiente escuro + Imagem de fundo da Sailor Moon */
-    background-image: linear-gradient(rgba(29, 13, 56, 0.7), rgba(119, 76, 143, 0.5)),
-                      url('SailorMoonBackground.jpg'); /* Substitua pelo caminho correto da imagem */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh; 
+body { font-family: 'Plus Jakarta Sans', sans-serif;
+
+/* Gradiente escuro + Imagem de fundo da Sailor Moon */
+background-image: linear-gradient(rgba(29, 13, 56, 0.7), rgba(119, 76, 143, 0.5)),
+                  url('SailorMoonBackground.jpg'); /* Nome da sua imagem de fundo */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+min-height: 100vh; 
 }
 
 /* Fonte estilizada para os títulos mágicos */
-.font-magica { 
-    font-family: 'Cinzel', serif; 
+.font-magica {
+font-family: 'Cinzel', serif;
 }
 
-/* Efeito de Vidro para os painéis (testanto em desenvolvimento) */
+/* Efeito de Vidro(testanto em desenvolvimento) */
 .vidro-magico {
-    background: rgba(255, 235, 240, 0.75);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 3px solid #ffe494;
-    box-shadow: 0 10px 40px rgba(119, 76, 143, 0.3), 0 0 20px rgba(255, 228, 148, 0.3) inset;
+background: rgba(255, 229, 236, 0.75) !important;
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+border: 3px solid #ffe494 !important;
+box-shadow: 0 8px 32px rgba(255, 77, 109, 0.25),
+0 0 15px rgba(255, 228, 148, 0.4) inset,
+0 0 25px rgba(255, 228, 148, 0.3) !important;
 }
 
-.digital-display {
-    background: rgba(18, 5, 36, 0.9);
-    border: 2px solid #ffcbd5;
-    box-shadow: inset 0 0 15px rgba(255, 77, 109, 0.5);
-    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ffd166;
+.visor {
+background: rgba(18, 1, 54, 0.9) !important;
+border: 2px solid #ffccd5 !important;
+box-shadow: inset 0 0 15px rgba(255, 77, 109, 0.6) !important;
+text-shadow: 0 0 8px #ff4d6d, 0 0 15px #ffd166;
 }
 
-.btn-controle { 
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+/* === 🌸 BOTÕES MÁGICOS GERAIS === */
+.btn-magico {
+background: linear-gradient(135deg, #ffccd5, #ffb3c1) !important;
+color: #4c1c24 !important;
+border: 2px solid #ffe494 !important;
+box-shadow: 0 4px 10px rgba(255, 77, 109, 0.15),
+inset 0 2px 4px rgba(255, 255, 255, 0.6) !important;
+transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+display: flex;
+align-items: center;
+justify-content: center;
 }
-.btn-controle:hover { 
-    transform: translateY(-3px) scale(1.05); 
+
+.btn-magico:hover {
+transform: translateY(-3px) scale(1.05);
+background: linear-gradient(135deg, #ffb3c1, #ff8fa3) !important;
+box-shadow: 0 0 15px #ffb3c1, 0 0 5px #ffe494 !important;
+border-color: #ffffff !important;
 }
-.btn-controle:active { 
-    transform: translateY(1px) scale(0.98); 
+
+.btn-magico:active {
+transform: translateY(1px) scale(0.98);
+}
+
+.btn-operador {
+background: linear-gradient(135deg, #ffe494, #ffd166) !important;
+color: #4c1c24 !important;
+}
+
+.btn-operador:hover {
+background: linear-gradient(135deg, #ffd166, #ffb703) !important;
+box-shadow: 0 0 15px #ffd166 !important;
+}
+
+.btn-igual {
+background: linear-gradient(135deg, #ff4d6d, #c9184a) !important;
+color: white !important;
+border-color: #ffe494 !important;
+}
+
+.btn-igual:hover {
+background: linear-gradient(135deg, #ff758f, #ff4d6d) !important;
+box-shadow: 0 0 20px rgba(255, 77, 109, 0.8) !important;
 }
 
 @keyframes flutuar {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+0% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-8px) rotate(3deg); }
+100% { transform: translateY(0px) rotate(0deg); }
 }
+
 .flutuar {
-    animation: flutuar 4s ease-in-out infinite;
+animation: flutuar 4s ease-in-out infinite;
 }
 
 /* Sistema de faíscas/partículas mágicas */
 .faisca {
-    position: absolute;
-    pointer-events: none;
-    font-size: 14px;
-    animation: voar 0.8s ease-out forwards;
-    z-index: 9999;
+position: absolute;
+pointer-events: none;
+font-size: 14px;
+animation: voar 0.8s ease-out forwards;
+z-index: 9999;
 }
 
 @keyframes voar {
-    0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
-    100% { transform: translate(var(--x), var(--y)) scale(0.3) rotate(360deg); opacity: 0; }
+0% {
+transform: translate(0, 0) scale(1) rotate(0deg);
+opacity: 1;
+}
+100% {
+transform: translate(var(--x), var(--y)) scale(0.3) rotate(360deg);
+opacity: 0;
+}
 }
