@@ -8,63 +8,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=500;700&family=Plus+Jakarta+Sans:wght=400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="w-[320px] h-[480px] flex flex-col items-center justify-center p-4 overflow-hidden bg-slate-900">
-    <main class="w-full max-w-[290px] relative">
+<body style="width: 320px; height: 480px; min-width: 320px; min-height: 480px;" class="flex flex-col items-center justify-center p-3 overflow-hidden bg-slate-900">
+    <main class="w-[290px] relative">
         
-        <div class="absolute -top-1 -right-3 w-16 h-16 flutuar z-10 block">
+        <div class="absolute -top-3 -right-2 w-14 h-14 flutuar z-10 block">
             <img id="imagem-cetro" src="cetro.png" alt="Cetro Sailor" class="w-full h-full object-contain" onerror="this.src='https://img.icons8.com/color/96/magic-wand.png'">
         </div>
 
-        <div class="absolute -bottom-3 -left-3 w-14 h-14 flutuar z-10 block">
+        <div class="absolute -bottom-2 -left-2 w-12 h-12 flutuar z-10 block">
             <img id="imagem-luna" src="luna.webp" alt="Luna Gata" class="w-full h-full object-contain" onerror="this.src='https://img.icons8.com/color/96/cat.png'">
         </div>
 
-        <div class="vidro-magico rounded-[32px] p-4 relative overflow-hidden">
-            <div class="flex justify-center mb-3">
-                <span class="text-3xl text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">🌙</span>
+        <div class="vidro-magico rounded-[28px] p-3 relative overflow-hidden">
+            <div class="flex justify-center mb-1">
+                <span class="text-2xl text-yellow-300 drop-shadow-[0_0_8px_rgba(253,224,71,0.8)]">🌙</span>
             </div>
             
-            <header class="text-center mb-4">
+            <header class="text-center mb-2.5">
               <h1 class="font-magica text-xl font-bold tracking-widest texto-titulo drop-shadow">PRISMA LUNAR</h1>
-               <p class="text-[10px] tracking-wider uppercase font-semibold texto-subtitulo">Calculadora de Transformação</p>
+               <p class="text-[9px] tracking-wider uppercase font-semibold texto-subtitulo">Calculadora de Transformação</p>
             </header>
 
-            <div class="visor rounded-xl p-3 mb-4 text-right min-h-[75px] flex flex-col justify-between">
+            <div class="visor rounded-xl p-2.5 mb-3 text-right min-h-[60px] flex flex-col justify-between">
                 <div class="historico-container">
-                    <div id="historico" class="text-[11px] text-rose-300 font-mono tracking-widest min-h-[14px]"></div>
+                    <div id="historico" class="text-[10px] text-rose-300 font-mono tracking-widest min-h-[12px]"></div>
                 </div>
-                <div id="display" class="text-2xl font-mono text-white tracking-wider truncate">0</div>
+                <div id="display" class="text-xl font-mono text-white tracking-wider truncate">0</div>
             </div>
 
-            <div class="grid grid-cols-4 gap-3.5">
-                <button class="btn-magico h-12 rounded-full font-magica font-bold text-sm" data-action="clear">C</button>
-                <button class="btn-magico h-12 rounded-full font-magica font-bold text-sm" data-action="backspace">⌫</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-operador" data-action="operator" data-val="%">%</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-operador" data-action="operator" data-val="/">÷</button>
+            <div class="grid grid-cols-4 gap-2.5">
+                <button class="btn-magico h-10 rounded-full font-magica font-bold text-xs" data-action="clear">C</button>
+                <button class="btn-magico h-10 rounded-full font-magica font-bold text-xs" data-action="backspace">⌫</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-operador" data-action="operator" data-val="%">%</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-operador" data-action="operator" data-val="/">÷</button>
 
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="7">7</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="8">8</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="9">9</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-operador" data-action="operator" data-val="*">×</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="7">7</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="8">8</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="9">9</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-operador" data-action="operator" data-val="*">×</button>
 
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="4">4</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="5">5</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="6">6</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-operador" data-action="operator" data-val="-">−</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="4">4</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="5">5</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="6">6</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-operador" data-action="operator" data-val="-">−</button>
 
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="1">1</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="2">2</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="3">3</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-operador" data-action="operator" data-val="+">+</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="1">1</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="2">2</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="3">3</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-operador" data-action="operator" data-val="+">+</button>
 
-                <button class="btn-magico h-12 rounded-full text-sm btn-operador" id="btn-magia">✨</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val="0">0</button>
-                <button class="btn-magico h-12 rounded-full font-semibold text-sm" data-action="number" data-val=".">,</button>
-                <button class="btn-magico h-12 rounded-full font-bold text-sm btn-igual" data-action="calculate">=</button>
+                <button class="btn-magico h-10 rounded-full text-xs btn-operador" id="btn-magia">✨</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val="0">0</button>
+                <button class="btn-magico h-10 rounded-full font-semibold text-xs" data-action="number" data-val=".">,</button>
+                <button class="btn-magico h-10 rounded-full font-bold text-xs btn-igual" data-action="calculate">=</button>
             </div>
             
-            <div class="text-center mt-5">
-             <span class="text-[9px] font-bold texto-subtitulo tracking-widest uppercase">✨ Pelo Poder do Prisma Lunar! ✨</span>
+            <div class="text-center mt-3.5">
+             <span class="text-[8px] font-bold texto-subtitulo tracking-widest uppercase">✨ Pelo Poder do Prisma Lunar! ✨</span>
             </div>
         </div>
     </main>
