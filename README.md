@@ -47,3 +47,45 @@ tailwind.css - Framework CSS Tailwind salvo localmente para segurança.
 script.js - Lógica matemática e captura dinâmica de eventos do teclado.
 
 LICENSE - Licença MIT que permite o uso livre do projeto.
+
+💻 Como Instalar e Usar no seu Navegador (Sem a Loja)
+
+Como esta extensão está em fase de desenvolvimento, você pode testá-la e usá-la de forma 100% gratuita no seu Google Chrome seguindo estes passos simples:
+
+📥 Passo 1: Preparar a pasta no seu Computador
+
+Faça o download ou clone este repositório para o seu computador.
+
+Certifique-se de extrair o arquivo .zip (se baixou por ele) para que fique uma pasta comum contendo os arquivos manifest.json, popup.html, style.css, script.js e as imagens locais.
+
+🔌 Passo 2: Ativar o Modo de Programador no Chrome
+
+Abra o seu navegador Google Chrome.
+
+Na barra de endereços, digite chrome://extensions/ e aperte Enter.
+
+No canto superior direito da página, ative a chave "Modo de programador" (Developer Mode) 🟢.
+
+🚀 Passo 3: Carregar a Extensão
+
+No canto superior esquerdo que acabou de aparecer, clique em "Carregar descompactada" (Load unpacked).
+
+Selecione a pasta do projeto no seu computador (onde estão os arquivos da calculadora) e clique em Selecionar Pasta.
+
+Pronto! A calculadora mágica agora está instalada localmente.
+
+📌 Passo 4: Fixar na Barra de Ferramentas
+
+Clique no ícone de Quebra-cabeça 🧩 (Extensões) no canto superior direito do seu Chrome.
+
+Encontre a Prisma Lunar: Calculadora Mágica na lista e clique no ícone do Alfinete 📌 ao lado dela.
+
+Agora ela está sempre visível! Basta dar um clique no ícone da Lua Crescente 🌙 para abrir e usar enquanto navega na internet.
+
+✨ Como Usar os Poderes Mágicos:
+
+Contas Rápidas: Faça suas operações matemáticas do dia a dia clicando nas teclas de cristal ou usando o teclado físico do seu computador.
+
+Efeito de Faíscas: Cada clique em qualquer botão faz estrelas, luas e corações mágicos voarem pelo seu cursor!
+
+Botão de Brilho Especial (✨): Clique no botão rosa com a estrelinha para fazer o visor de histórico deslizar frases de efeito clássicas do anime Sailor Moon!
