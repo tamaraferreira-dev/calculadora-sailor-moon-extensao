@@ -1,6 +1,19 @@
 /* Importando as fontes do Google (teste 1) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght=400;600;700&display=swap');
 
+/*ALTERANDO O TAMANHO DA JANELA PARA 320x480 (TAMANHO DE CELULAR)*/
+html, body {
+width: 320px !important;
+height: 480px !important;
+min-width: 320px !important;
+min-height: 480px !important;
+max-width: 320px !important;
+max-height: 480px !important;
+margin: 0 !important;
+padding: 0 !important;
+overflow: hidden !important;
+}
+
 body { font-family: 'Plus Jakarta Sans', sans-serif;
 
 /* Gradiente escuro + Imagem de fundo da Sailor Moon */
@@ -9,7 +22,7 @@ background-image: linear-gradient(rgba(29, 13, 56, 0.7), rgba(119, 76, 143, 0.5)
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-min-height: 100vh; 
+height: 100% !important;
 }
 
 /* Fonte estilizada para os títulos mágicos */
@@ -30,7 +43,7 @@ font-family: 'Cinzel', serif;
 background: rgba(255, 229, 236, 0.75) !important;
 backdrop-filter: blur(12px);
 -webkit-backdrop-filter: blur(12px);
-border-radius: 32px !important;
+border-radius: 28px !important;
 border: 3px solid #ffe494 !important;
 box-shadow: 0 8px 32px rgba(255, 77, 109, 0.25),
 0 0 15px rgba(255, 228, 148, 0.4) inset,
