@@ -66,6 +66,74 @@ function inserirOperador(operador) {
     display.innerText = formatarParaExibicao(expressaoAtual);
 }
 
+/* ===PROCESSADOR MATEMÁTICO NOVO (Resolve contas sem usar o 'eval()')=== */
+function calcularExpressaoSegura(expressao) {
+    let listaTokens = [];
+    let bufferNumero = "";
+
+    for (let i = 0; i < expressao.length; i++) {
+        let char = expressao[i];
+        if ((char >= '0' && char <= '9') || char === '.') {
+            bufferNumero += char;
+        } else {
+            if (bufferNumero) {
+                listaTokens.push(parseFloat(bufferNumero));
+                bufferNumero = "";
+            }
+            
+            if (char === '-' && (listaTokens.length === 0 || ['+', '-', '*', '/'].includes(expressao[i - 1]))) {
+                bufferNumero += char;
+            } else {
+                listaTokens.push(char);
+            }
+        }
+    }
+    if (bufferNumero) {
+        listaTokens.push(parseFloat(bufferNumero));
+    }
+
+    for (let i = 0; i < listaTokens.length; i++) {
+        if (listaTokens[i] === '%') {
+            if (i > 0 && typeof listaTokens[i - 1] === 'number') {
+                listaTokens[i - 1] = listaTokens[i - 1] / 100;
+                listaTokens.splice(i, 1);
+                i--;
+            }
+        }
+    }
+
+    for (let i = 0; i < listaTokens.length; i++) {
+        if (listaTokens[i] === '*' || listaTokens[i] === '/') {
+            let operador = listaTokens[i];
+            let anterior = listaTokens[i - 1];
+            let proximo = listaTokens[i + 1];
+            if (typeof anterior !== 'number' || typeof proximo !== 'number') return null;
+
+            let calculo = operador === '*' ? anterior * proximo : anterior / proximo;
+            listaTokens.splice(i - 1, 3, calculo);
+            i--;
+        }
+    }
+
+    let total = listaTokens[0];
+    if (typeof total !== 'number') return null;
+
+    for (let i = 1; i < listaTokens.length; i += 2) {
+        let operador = listaTokens[i];
+        let proximo = listaTokens[i + 1];
+        if (typeof proximo !== 'number') return null;
+
+        if (operador === '+') {
+            total += proximo;
+        } else if (operador === '-') {
+            total -= proximo;
+        } else {
+            return null;
+        }
+    }
+    return total;
+}
+
 function calcularResultado() {
     if (expressaoAtual === "") return;
 
@@ -73,15 +141,9 @@ function calcularResultado() {
         desativarEfeitoMarquee();
         historico.innerText = formatarParaExibicao(expressaoAtual) + " =";
 
-        let expressaoLimpa = expressaoAtual.replace(/×/g, '*').replace(/÷/g, '/');
+        let resultado = calcularExpressaoSegura(expressaoAtual);
 
-        if (expressaoLimpa.includes('%')) {
-            expressaoLimpa = expressaoLimpa.replace(/(\d+)%/g, "($1/100)");
-        }
-
-        let resultado = eval(expressaoLimpa);
-
-        if (resultado === Infinity || isNaN(resultado)) {
+        if (resultado === null || resultado === Infinity || isNaN(resultado)) {
             display.innerText = "Erro Mágico";
             expressaoAtual = "";
         } else {
